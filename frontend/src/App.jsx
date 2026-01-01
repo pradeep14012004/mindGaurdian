@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
@@ -23,18 +23,16 @@ export default function App() {
   return (
     <>
       <style>{globalStyles}</style>
-      <BrowserRouter>
-        <>
-          <Routes>
-            <Route path="/" element={<Onboarding />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/weather" element={<Weather />} />
-            <Route path="/calm" element={<Calm />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-          <BottomNav />
-        </>
-      </BrowserRouter>
+
+      <Routes>
+        <Route path="/" element={<Onboarding />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/weather" element={<Weather />} />
+        <Route path="/calm" element={<Calm />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+
+      <BottomNav />
     </>
   );
 }
